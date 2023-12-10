@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<v1:PublishNumbersReqMsg xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+                         xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1">
+    <servicestype:iossVatNumberUpdate>
+        <servicestype:operation>C</servicestype:operation>
+        <servicestype:iossVatId>IM0000000000</servicestype:iossVatId>
+        <servicestype:validityStartDate>2021-05-04</servicestype:validityStartDate>
+        <servicestype:validityEndDate>2021-05-04</servicestype:validityEndDate>
+        <servicestype:modificationDateTime>2021-05-04T18:13:51.0</servicestype:modificationDateTime>
+    </servicestype:iossVatNumberUpdate>
+</v1:PublishNumbersReqMsg>

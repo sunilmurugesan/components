@@ -1,0 +1,8 @@
+<v1:UpdateSubscriptionReqMsg xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+                              xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISubscriptionBAS/V1"
+                              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                              xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISubscriptionBAS/V1 file:/xsd/subscription/SubscriptionBAS.xsd">
+        <servicestype:newStatus>1</servicestype:newStatus>
+        <servicestype:contactEMail>test@hmrc.gov.uk</servicestype:contactEMail>
+        <servicestype:destinationId>CCN2.Partner.AA.AAA.AAA/AA.AAA</servicestype:destinationId>
+</v1:UpdateSubscriptionReqMsg>

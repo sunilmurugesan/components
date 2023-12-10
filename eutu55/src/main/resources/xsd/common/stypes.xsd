@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+  targetNamespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:simpleType name="IossVatIdType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="IM[0-9]{10}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ModificationType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[CUD]" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BooleanNumberType">
+    <xs:restriction base="xs:unsignedByte">
+      <xs:maxInclusive value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ContactEMailType">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[^@]+@[^\.]+\..+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DestinationIdType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="CCN2\.Partner\.[A-Z]{2}\.[a-zA-Z_]{3,100}\.[a-zA-Z_]{3,100}/[a-zA-Z_]{2,100}\.[a-zA-Z_]{3,100}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

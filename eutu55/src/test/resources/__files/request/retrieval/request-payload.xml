@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<n1:RetrievalRequest
+        xmlns:n1="http://www.hmrc.gsi.gov.uk/eis/retrieval">
+    <n1:fromDate>2022-04-11</n1:fromDate>
+</n1:RetrievalRequest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:StatusResponse xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/status"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.hmrc.gsi.gov.uk/eis/status DRS15_Status_Response_Schema.xsd">
+    <ns:statusResult>
+        <ns:outcome>1</ns:outcome>
+    </ns:statusResult>
+    <ns:status>1</ns:status>
+    <ns:totalItems>5000</ns:totalItems>
+    <ns:lastDisseminationDateTime>2006-05-04T18:13:51.0</ns:lastDisseminationDateTime>
+</ns:StatusResponse>

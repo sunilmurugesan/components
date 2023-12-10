@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+           elementFormDefault="qualified"
+           targetNamespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1">
+    <xs:include schemaLocation="ctypes.xsd"/>
+    <xs:complexType name="GetNodeStatusRequestType">
+        <xs:sequence>
+            <xs:element name="destinationId" type="DestinationIdType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="GetNodeStatusResponseType">
+        <xs:complexContent>
+            <xs:extension base="NodeStatusType"/>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

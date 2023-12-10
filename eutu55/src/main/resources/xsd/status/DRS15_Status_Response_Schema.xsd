@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/status" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hmrc.gsi.gov.uk/eis/status" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:group name="NotificationTypeGroup">
+		<xsd:sequence>
+			<xsd:element name="status">
+				<xsd:annotation>
+					<xsd:documentation>The status of the local node. 1 represents ON, 0 represents OFF</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:unsignedByte">
+						<xsd:maxInclusive value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="totalItems" type="xsd:unsignedInt"/>
+			<xsd:element name="lastDisseminationDateTime" type="xsd:dateTime"/>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:element name="StatusResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="statusResult">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="outcome">
+								<xsd:annotation>
+									<xsd:documentation>1 = success ; 0 = error with error code</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:unsignedByte">
+										<xsd:maxInclusive value="1"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="error" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="code" type="xsd:string" minOccurs="1">
+											<xsd:annotation>
+												<xsd:documentation>The code of the identified validation error.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="reference" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Reference to the identified erroneous entry.</xsd:documentation>
+											</xsd:annotation>
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:token">
+													<xsd:pattern value="IM[0-9]{10}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="ns:NotificationTypeGroup" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

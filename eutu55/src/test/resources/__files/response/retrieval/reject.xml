@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:RetrievalResponse
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:n1="http://www.hmrc.gsi.gov.uk/eis/retrieval">
+    <n1:operationResult>
+        <n1:outcome>0</n1:outcome>
+    </n1:operationResult>
+</n1:RetrievalResponse>

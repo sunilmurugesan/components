@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<jaxb:bindings version="1.0"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:namespace="http://jaxb2-commons.dev.java.net/namespace-prefix"
+               jaxb:extensionBindingPrefixes="xjc namespace">
+
+    <jaxb:bindings schemaLocation="DRS15_Status_Response_Schema.xsd">
+        <jaxb:bindings>
+            <namespace:prefix name="ns" namespaceURI="http://www.hmrc.gsi.gov.uk/eis/status"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+
+    <jaxb:bindings schemaLocation="EIS-XML Error Schema.xsd">
+        <jaxb:bindings>
+            <namespace:prefix name="eis" namespaceURI="http://www.hmrc.gsi.gov.uk/eis"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+
+</jaxb:bindings>

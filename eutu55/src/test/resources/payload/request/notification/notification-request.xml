@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<v1:SyncNotificationReqMsg xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+                           xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1"
+                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                           xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1">
+    <servicestype:SyncNotificationType>
+        <servicestype:status>1</servicestype:status>
+        <servicestype:totalItems>12</servicestype:totalItems>
+        <servicestype:lastDisseminationDateTime>2022-02-16T21:12:24.0</servicestype:lastDisseminationDateTime>
+    </servicestype:SyncNotificationType>
+</v1:SyncNotificationReqMsg>

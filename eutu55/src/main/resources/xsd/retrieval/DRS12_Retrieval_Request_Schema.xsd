@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/retrieval" targetNamespace="http://www.hmrc.gsi.gov.uk/eis/retrieval" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:element name="RetrievalRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="fromDate" type="xsd:date">
+					<xsd:annotation>
+						<xsd:documentation>A date to requests a transmission of data to allow recovery from some incident</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

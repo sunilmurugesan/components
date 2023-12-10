@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:hsqldb:mem:testdb
+    username: sa
+    password:
+    schema: classpath:sql/schema.sql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+logging.level.org.springframework.jdbc.core: TRACE
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: INFO
+
+server:
+  servlet:
+    context-path: /pds/cnit/eutu55
+
+wiremock.test.baseurl: http://localhost:7070
+
+integration:
+  eis:
+    endpoint:
+      retrieval: ${wiremock.test.baseurl}/eis/cnit/eutu55/retrieval
+      retrieval-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+      subscription: ${wiremock.test.baseurl}/eis/cnit/eutu55/subscription
+      subscription-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+      status: ${wiremock.test.baseurl}/eis/cnit/eutu55/status
+      status-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+      ping: ${wiremock.test.baseurl}/eis/cnit/eutu55/ping
+      ping-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+    ccn2:
+      destinationId: CCN2.Partner.XX.XXX.XXX/XX.XXX
+
+cors:
+  allowed:
+    origins:
+
+# Housekeeping
+housekeeping:
+  enabled: true
+  retention-period: 1 # days
+  frequency: "0 0 0 * */3 *" # Runs every 3 months

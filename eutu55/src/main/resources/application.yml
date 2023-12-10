@@ -1,0 +1,87 @@
+info:
+  version: ${VERSION:0.0.1}
+
+server:
+  port: 8090
+
+management:
+  security:
+    enabled: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure.include: "*"
+      base-path: /
+
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@172.17.0.2:1521/ORADB19C
+    username: eos_user
+    password: welcome1
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 900000
+      maximum-pool-size: 10
+      minimum-idle: 10
+      pool-name: eutu55Pool
+      connection-test-query: select 1 from dual
+
+pds:
+  eutu55:
+    jdbc:
+      batch_size: 500
+
+
+integration:
+  eis:
+    baseuri: http://localhost:8090
+    endpoint:
+      retrieval: ${integration.eis.baseuri}/pds/cnit/eutu55/drs/iossdr/retrieval/v1
+      retrieval-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+      subscription: ${integration.eis.baseuri}/pds/cnit/eutu55/drs/iossdr/updatesubscription/v1
+      subscription-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+      status: ${integration.eis.baseuri}/pds/cnit/eutu55/drs/iossdr/status/v1
+      status-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+      ping: ${integration.eis.baseuri}/pds/cnit/eutu55/drs/iossdr/ping/v1
+      ping-bearer-token: f916fa9b-0500-3837-a321-4c76f67499e0
+    ccn2:
+      destinationId: CCN2.Partner.XX.XXX.XXX/XX.XXX
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+
+endpoints:
+  logfile:
+    external-file: ${java.io.tmpdir}/spring-boot-logs/dms/eutu55Trader.log
+
+log:
+  organization: BOLT
+  service: PDS-IOSS-API
+  appender: ROLLING_JSON_FILE_APPENDER
+  level: DEBUG
+  file:
+    path: ${java.io.tmpdir}/log/pds-ioss
+    name: pds-ioss-api
+  package:
+    name: uk.gov.hmrc.eos
+  dissemination:
+    show-request-payload: false
+
+#Add origins separated by comma without space
+cors:
+  allowed:
+    origins:
+
+# Housekeeping
+housekeeping:
+  enabled: true
+  retention-period: 365 # Retention period of records in days
+  frequency: "0 0 0 * */3 *" # Runs every 3 months

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eis="http://www.hmrc.gsi.gov.uk/eis" targetNamespace="http://www.hmrc.gsi.gov.uk/eis" elementFormDefault="qualified">
+	<xsd:element name="errorDetail">
+		<xsd:complexType>
+			<xsd:all>
+				<xsd:element name="timestamp" minOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:dateTime">
+							<xsd:pattern value="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="correlationId" minOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="36"/>
+							<xsd:maxLength value="36"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="errorCode">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="35"/>
+							<xsd:minLength value="1"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="errorMessage" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="1"/>
+							<xsd:maxLength value="255"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="source" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="1"/>
+							<xsd:maxLength value="40"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="sourceFaultDetail" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="detail" type="xsd:string" maxOccurs="unbounded"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:all>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

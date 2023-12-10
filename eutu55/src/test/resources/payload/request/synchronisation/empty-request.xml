@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<v1:PublishNumbersReqMsg xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+                         xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1">
+</v1:PublishNumbersReqMsg>

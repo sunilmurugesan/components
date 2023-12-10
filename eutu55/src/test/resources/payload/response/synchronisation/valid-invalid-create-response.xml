@@ -1,0 +1,21 @@
+<v1:PublishNumbersRespMsg xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1 file:/xsd/synchronisation/SynchronisationCBS.xsd">
+    <servicestype:publicationResults>
+        <servicestype:outcome>0</servicestype:outcome>
+        <servicestype:error>
+            <servicestype:code>20040</servicestype:code>
+            <servicestype:reference>IM1000000004</servicestype:reference>
+        </servicestype:error>
+        <servicestype:error>
+            <servicestype:code>20030</servicestype:code>
+            <servicestype:reference>IM1000000003</servicestype:reference>
+        </servicestype:error>
+        <servicestype:error>
+            <servicestype:code>10030</servicestype:code>
+            <servicestype:reference>IM1000000001</servicestype:reference>
+        </servicestype:error>
+        <servicestype:error>
+            <servicestype:code>10030</servicestype:code>
+            <servicestype:reference>IM1000000001</servicestype:reference>
+        </servicestype:error>
+    </servicestype:publicationResults>
+</v1:PublishNumbersRespMsg>

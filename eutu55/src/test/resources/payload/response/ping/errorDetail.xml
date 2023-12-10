@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<res:errorDetail xmlns:res="http://www.hmrc.gsi.gov.uk/eis"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <res:timestamp>2021-11-10T11:11:01Z</res:timestamp>
+    <res:correlationId>a1e8057e-fbbc-47a8-a8b4-78d9f015c299</res:correlationId>
+    <res:errorCode>10010</res:errorCode>
+    <res:errorMessage>Request is invalid according to the schema
+        definition</res:errorMessage>
+    <res:source>EIS</res:source>
+    <res:sourceFaultDetail>
+        <res:detail>10010 - Request is invalid according to the schema
+            definition</res:detail>
+    </res:sourceFaultDetail>
+</res:errorDetail>

@@ -1,0 +1,44 @@
+{
+  "logEvent" : {
+    "/pds/cnit/eutu55/subscription/v1": {
+      "event.action": "PDS_IOSS_SUBSCRIP",
+      "Upstream_Service.Name": "PDS-IOSS-UI",
+      "entry.message": "Subscription State Maintenance"
+    },
+    "/pds/cnit/eutu55/subscription/status/v1": {
+      "event.action": "PDS_IOSS_SUBSSTAT",
+      "Upstream_Service.Name": "PDS-IOSS-UI",
+      "entry.message": "Subscription Status"
+    },
+    "/pds/cnit/eutu55/synchronisation/v1": {
+      "event.action": "PDS_IOSS_SYNCHRON",
+      "Upstream_Service.Name": "EIS",
+      "entry.message": "Dissemination"
+    },
+    "/pds/cnit/eutu55/retrieval/v1": {
+      "event.action": "PDS_IOSS_RETRIEV",
+      "Upstream_Service.Name": "PDS-IOSS-UI",
+      "entry.message": "Retrieval"
+    },
+    "/pds/cnit/eutu55/ping/v1": {
+      "event.action": "PDS_IOSS_PING",
+      "Upstream_Service.Name": "PDS-IOSS-UI",
+      "entry.message": "Health check of the connectivity to the EU central IOSS system"
+    },
+    "/pds/cnit/eutu55/notificationcbs/v1": {
+      "event.action": "PDS_IOSS_NOTIFI",
+      "Upstream_Service.Name": "EIS",
+      "entry.message": "Notification for end of retrieval processing"
+    },
+    "/pds/cnit/eutu55/status/v1": {
+      "event.action": "PDS_IOSS_STATUSENQ",
+      "Upstream_Service.Name": "EIS",
+      "entry.message": "Status Enquiry"
+    },
+    "/pds/cnit/eutu55/admin/audit/v1": {
+      "event.action": "PDS_IOSS_ADMINAUD",
+      "Upstream_Service.Name": "PDS-IOSS-UI",
+      "entry.message": "Admin Audit Request"
+    }
+  }
+}

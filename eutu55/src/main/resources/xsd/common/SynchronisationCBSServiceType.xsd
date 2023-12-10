@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+  targetNamespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:include schemaLocation="ctypes.xsd"></xs:include>
+  <xs:complexType name="PublishNumbersRequestType">
+    <xs:sequence>
+      <xs:element name="iossVatNumberUpdate" type="PublishOperationType" maxOccurs="5000" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PublishNumbersResponseType">
+    <xs:sequence>
+      <xs:element name="publicationResults" type="AcknowledgementType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

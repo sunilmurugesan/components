@@ -1,0 +1,4 @@
+<v1:SyncNotificationRespMsg
+        xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1 file:/xsd/notification/NotificationCBS.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1"/>

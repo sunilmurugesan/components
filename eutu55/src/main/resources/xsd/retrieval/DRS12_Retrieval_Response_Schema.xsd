@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/retrieval" targetNamespace="http://www.hmrc.gsi.gov.uk/eis/retrieval" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xsd:element name="RetrievalResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="operationResult">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="outcome">
+								<xsd:annotation>
+									<xsd:documentation>1 = success – the data will be transmitted via F1 Dissemination ; 0 = error with error code</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:unsignedByte">
+										<xsd:maxInclusive value="1"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="error" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="code" type="xsd:string" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>The code of the identified validation error.</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="reference" minOccurs="0">
+											<xsd:annotation>
+												<xsd:documentation>Reference to the identified erroneous entry.</xsd:documentation>
+											</xsd:annotation>
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:token">
+													<xsd:pattern value="IM[0-9]{10}"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

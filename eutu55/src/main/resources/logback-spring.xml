@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="log.appender" source="log.appender" defaultValue="CONSOLE" />
+    <springProperty scope="context" name="log.file.path" source="log.file.path" />
+    <springProperty scope="context" name="log.organization" source="log.organization" defaultValue="BOLT"/>
+    <springProperty scope="context" name="log.service" source="log.service" defaultValue="PDS-IOSS-API"/>
+    <springProperty scope="context" name="log.level" source="log.level" defaultValue="DEBUG" />
+    <springProperty scope="context" name="log.file.name" source="log.file.name" defaultValue="pds-ioss-api" />
+    <springProperty scope="context" name="log.package.name" source="log.package.name" defaultValue="uk.gov.hmrc.eos.eutu55" />
+    <springProperty scope="local" name="log.remote.host" source="log.remote.host" defaultValue="127.0.0.1"/>
+    <springProperty scope="local" name="log.remote.port" source="log.remote.port" defaultValue="4560"/>
+    <springProperty scope="context" name="info.version" source="info.version" defaultValue="1.0"/>
+
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="[%clr(%date]){faint} %clr([%thread]) %-5level %clr([${log.organization},${log.service},${info.version}]){magenta} %logger{36} - %clr(%X{LOG_SERVICE_ACTION_CODE} %X{LOG_SERVICE_ACTION}){cyan} %msg%n"/>
+    <property name="FILE_LOG_PATTERN"
+              value="[%date] [%thread] %-5level [${log.organization},${log.service},${info.version}] %logger{36} - %X{LOG_SERVICE_ACTION_CODE} %X{LOG_SERVICE_ACTION} %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                ${CONSOLE_LOG_PATTERN}
+            </Pattern>
+        </layout>
+    </appender>
+
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.file.path}/${log.file.name}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                ${FILE_LOG_PATTERN}
+            </Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.file.path}/${log.file.name}-%d{ddMMyyyy}.%i.log.zip
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="JSON_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeContext>false</includeContext>
+            <includeMdcKeyName>Request_Id</includeMdcKeyName>
+            <includeMdcKeyName>Upstream_Service.Name</includeMdcKeyName>
+            <includeMdcKeyName>event.action</includeMdcKeyName>
+            <includeMdcKeyName>event.action</includeMdcKeyName>
+            <includeMdcKeyName>event.sequence</includeMdcKeyName>
+            <includeMdcKeyName>event.type</includeMdcKeyName>
+            <includeMdcKeyName>request</includeMdcKeyName>
+            <includeMdcKeyName>response</includeMdcKeyName>
+            <includeMdcKeyName>error.code</includeMdcKeyName>
+            <includeMdcKeyName>error.text</includeMdcKeyName>
+            <customFields>
+                {"service.name":"${log.service}",
+                "service.version":"${info.version}"}
+            </customFields>
+            <timestampPattern>yyyy-MM-dd'T'HH:mm:ss.SSSZZ</timestampPattern>
+            <fieldNames>
+                <logger>log.logger</logger>
+                <level>log.level</level>
+                <thread>process.thread.name</thread>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+            </fieldNames>
+            <provider class="net.logstash.logback.composite.loggingevent.ArgumentsJsonProvider"/>
+        </encoder>
+    </appender>
+
+    <appender name="ROLLING_JSON_FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.file.path}/${log.file.name}.json</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" >
+            <includeContext>false</includeContext>
+            <includeMdcKeyName>Request_Id</includeMdcKeyName>
+            <includeMdcKeyName>Upstream_Service.Name</includeMdcKeyName>
+            <includeMdcKeyName>event.action</includeMdcKeyName>
+            <includeMdcKeyName>event.action</includeMdcKeyName>
+            <includeMdcKeyName>event.sequence</includeMdcKeyName>
+            <includeMdcKeyName>event.type</includeMdcKeyName>
+            <includeMdcKeyName>request</includeMdcKeyName>
+            <includeMdcKeyName>response</includeMdcKeyName>
+            <includeMdcKeyName>error.code</includeMdcKeyName>
+            <includeMdcKeyName>error.text</includeMdcKeyName>
+            <customFields>
+                {"service.name":"${log.service}",
+                "service.version":"${info.version}"}
+            </customFields>
+            <timestampPattern>yyyy-MM-dd'T'HH:mm:ss.SSSZZ</timestampPattern>
+            <fieldNames>
+                <logger>log.logger</logger>
+                <level>log.level</level>
+                <thread>process.thread.name</thread>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+            </fieldNames>
+            <provider class="net.logstash.logback.composite.loggingevent.ArgumentsJsonProvider"/>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.file.path}/${log.file.name}-%d{ddMMyyyy}.%i.json.zip
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="JSON_TCP" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+        <destination>${log.remote.host}:${log.remote.port}</destination>
+    </appender>
+
+    <logger name="${log.package.name}" level="${log.level}" additivity="false">
+        <appender-ref ref="${log.appender}" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="${log.appender:-JSON_CONSOLE}" />
+        <appender-ref ref="JSON_CONSOLE" />
+    </root>
+
+
+</configuration>

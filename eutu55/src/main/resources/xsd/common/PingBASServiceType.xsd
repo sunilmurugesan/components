@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+           elementFormDefault="qualified"
+           targetNamespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1">
+  
+  <xs:include schemaLocation="stypes.xsd"></xs:include>
+  
+  <xs:complexType name="PingRequestType" />
+  
+  <xs:complexType name="PingResponseType">
+    <xs:sequence>
+      <xs:element name="isAlive" type="BooleanNumberType"  />
+    </xs:sequence>
+  </xs:complexType>    
+  
+</xs:schema>

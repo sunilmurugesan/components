@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/ping" targetNamespace="http://www.hmrc.gsi.gov.uk/eis/ping" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+    <xsd:element name="PingResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="operationResult">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="isAlive">
+                                <xsd:annotation>
+                                    <xsd:documentation>1 if no error occurred during the process, 0 otherwise.</xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:unsignedByte">
+                                        <xsd:maxInclusive value="1"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

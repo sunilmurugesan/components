@@ -1,0 +1,10 @@
+<v1:SyncNotificationReqMsg xmlns:v1="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1"
+                           xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                           xsi:schemaLocation="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1 file:/D:/fdev/ioss-dr/IOSS-DR_updates/TSC/BusinessActivityService/IOSS_DR%20(CCN2)/NotificationCBS/V1/ICCN2.Service.Taxation.Default.IOSS_DR.NotificationCBS.xsd">
+    <servicestype:SyncNotificationType>
+        <servicestype:status>1</servicestype:status>
+        <servicestype:totalItems>100</servicestype:totalItems>
+        <servicestype:lastDisseminationDateTime>2006-05-04T18:13:51.0</servicestype:lastDisseminationDateTime>
+    </servicestype:SyncNotificationType>
+</v1:SyncNotificationReqMsg>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<jaxb:bindings version="1.0"
+               xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:namespace="http://jaxb2-commons.dev.java.net/namespace-prefix"
+               jaxb:extensionBindingPrefixes="xjc namespace">
+    <jaxb:bindings generateElementProperty="false">
+        <jaxb:globalBindings>
+            <xjc:simple/>
+            <xjc:javaType adapter="uk.gov.hmrc.eos.eutu55.adapter.LocalDateAdapter" name="java.time.LocalDate" xmlType="xs:date"/>
+            <xjc:javaType adapter="uk.gov.hmrc.eos.eutu55.adapter.LocalDateTimeAdapter" name="java.time.LocalDateTime" xmlType="xs:dateTime"/>
+        </jaxb:globalBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="SynchronisationCBS.xsd">
+        <jaxb:bindings>
+            <namespace:prefix name="v1" namespaceURI="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/ISynchronisationCBS/V1"/>
+            <namespace:prefix name="servicestype" namespaceURI="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+
+</jaxb:bindings>

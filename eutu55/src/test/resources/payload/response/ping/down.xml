@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<n1:PingResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:n1="http://www.hmrc.gsi.gov.uk/eis/ping">
+    <n1:operationResult>
+        <n1:isAlive>0</n1:isAlive>
+    </n1:operationResult>
+</n1:PingResponse>

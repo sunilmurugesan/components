@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/UpdateSubscription" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.hmrc.gsi.gov.uk/eis/UpdateSubscription" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:element name="UpdateSubscriptionRespMsg">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="operationResult">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="outcome">
+								<xs:simpleType>
+									<xs:restriction base="xs:unsignedByte">
+										<xs:maxInclusive value="1"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="error" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="code" type="xs:string"/>
+										<xs:element name="reference" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:token">
+													<xs:pattern value="IM[0-9]{10}"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

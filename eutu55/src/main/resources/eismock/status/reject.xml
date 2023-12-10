@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:StatusResponse xmlns:ns="http://www.hmrc.gsi.gov.uk/eis/status"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.hmrc.gsi.gov.uk/eis/status DRS15_Status_Response_Schema.xsd">
+    <ns:statusResult>
+        <ns:outcome>1</ns:outcome>
+        <ns:error>
+            <ns:code>20090</ns:code>
+            <ns:reference>IM0000000000</ns:reference>
+        </ns:error>
+    </ns:statusResult>
+</ns:StatusResponse>

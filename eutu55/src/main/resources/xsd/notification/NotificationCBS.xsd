@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1"
+           targetNamespace="http://xmlns.ec.eu/BusinessActivityService/IOSS_DR/INotificationCBS/V1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:servicestype="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1">
+            <xs:import namespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" schemaLocation="../common/NotificationCBSServiceType.xsd"/>
+
+    <xs:element name="SyncNotificationReqMsg" type="servicestype:SyncNotificationRequestType"/>
+    <xs:element name="SyncNotificationRespMsg" type="servicestype:SyncNotificationResponseType"/>
+</xs:schema>

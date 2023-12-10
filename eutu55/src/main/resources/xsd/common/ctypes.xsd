@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1"
+  targetNamespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:include schemaLocation="stypes.xsd" />
+  <xs:group name="IossVatNumberGroup">
+    <xs:sequence>
+      <xs:element name="iossVatId" type="IossVatIdType" />
+      <xs:element name="validityStartDate" type="xs:date" minOccurs="0" />
+      <xs:element name="validityEndDate" type="xs:date" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="NotificationTypeGroup">
+    <xs:sequence>
+      <xs:element name="status" type="BooleanNumberType" />
+      <xs:element name="totalItems" type="xs:unsignedInt" />
+      <xs:element name="lastDisseminationDateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:group>  
+  <xs:complexType name="PublishOperationType">
+    <xs:sequence>
+      <xs:element name="operation" type="ModificationType" />
+      <xs:group ref="IossVatNumberGroup" />
+      <xs:element name="modificationDateTime" type="xs:dateTime" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AcknowledgementType">
+    <xs:sequence>
+      <xs:element name="outcome" type="BooleanNumberType" />
+      <xs:element name="error" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="code" type="xs:string" />
+            <xs:element name="reference" type="IossVatIdType" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveNumbersType">
+    <xs:sequence>
+      <xs:element name="destinationId" type="DestinationIdType"/>
+      <xs:element name="fromDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>  
+  <xs:complexType name="SyncNotificationType">
+    <xs:sequence>
+      <xs:group ref="NotificationTypeGroup" />
+     </xs:sequence>
+  </xs:complexType> 
+  <xs:complexType name="NodeStatusType">
+    <xs:sequence>
+      <xs:element name="statusResult" type="AcknowledgementType" />
+      <xs:group ref="NotificationTypeGroup" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

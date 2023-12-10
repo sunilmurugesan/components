@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.ec.eu/BusinessObjects/IOSS_DR/Common/V1" elementFormDefault="qualified">
+    <xs:include schemaLocation="ctypes.xsd"/>
+    <xs:complexType name="UpdateSubscriptionRequestType">
+        <xs:sequence>
+            <xs:element name="newStatus" type="BooleanNumberType"/>
+            <xs:element name="contactEMail" type="ContactEMailType"/>
+            <xs:element name="destinationId" type="DestinationIdType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="UpdateSubscriptionResponseType">
+        <xs:sequence>
+            <xs:element name="operationResult" type="AcknowledgementType"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
